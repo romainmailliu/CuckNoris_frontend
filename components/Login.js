@@ -1,15 +1,19 @@
 import styles from "../styles/Login.module.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEarlybirds } from "@fortawesome/free-solid-svg-icons";
+import { faEarlybirds } from "@fortawesome/free-brands-svg-icons";
 
 function Login() {
+<<<<<<< HEAD
   // const [isModalVisible, setIsModalVisible] = useState(false);
+=======
+  //const [isModalVisible, setIsModalVisible] = useState(false);
+>>>>>>> b2bd625751103b55677ca1a4d163230495a48131
 
   return (
-    <div>
+    <div className={styles.container}>
       {/* Partie gauche */}
       <div className={styles.left}>
-        <FontAwesomeIcon icon={faEarlybirds} />
+        <FontAwesomeIcon icon={faEarlybirds} className={styles.icon} />
         <logo></logo>
       </div>
 
