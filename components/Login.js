@@ -99,7 +99,7 @@ function Login() {
       <div className={styles.right}>
         <h1 className={styles.title}>Et toi, tu en penses quoi ?</h1>
         <p className={styles.subtitle}>
-          Rejoins LaChouette pour donner ton avis sur tout (et rien){" "}
+          Rejoins LaChouette pour donner ton avis sur tout !{" "}
         </p>
 
         <button
