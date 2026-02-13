@@ -2,7 +2,8 @@ import "../styles/globals.css";
 import Head from "next/head";
 import Login from "../components/Login";
 import "antd/dist/reset.css";
-import users from "../reducers/users";
+import user from "../reducers/users";
+import { useRouter } from "next/router"; // Gérer le changement de page
 
 // REDUCE
 import { Provider } from "react-redux";
@@ -12,7 +13,7 @@ import { persistStore, persistReducer } from "redux-persist";
 import { PersistGate } from "redux-persist/integration/react";
 import storage from "redux-persist/lib/storage";
 
-const reducers = combineReducers({ users });
+const reducers = combineReducers({ user });
 const persistConfig = { key: "CuckNoris", storage };
 
 const store = configureStore({
