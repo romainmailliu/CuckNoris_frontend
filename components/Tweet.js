@@ -1,19 +1,25 @@
 import styles from "../styles/Tweet.module.css";
+import { useDispatch, useSelector } from "react-redux";
+import { addTweets } from "../reducers/lastTweets";
 
-function Tweet() {
-  fetch("https://api.example.com/tweets", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      name: "Jean Dupont",
-      email: "jean@example.com",
-    }),
-  })
-    .then((response) => response.json())
-    .then((data) => console.log("Succès:", data))
-    .catch((error) => console.error("Erreur:", error));
+function Tweet(props) {
+  const dispatch = useDispatch();
+  const user = useSelector((state) => state.user.value);
+  console.log(user);
+
+  const postTweetClick = () => {
+    if (!user.token) {
+      return;
+    }
+
+    fetch(`http://localhost:3000/users/canTweet/${user.token}`)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.result && data.canTweet) {
+          dispatch(addTweets(props));
+        }
+      });
+  };
 
   return (
     <div className={styles.container}>
@@ -28,7 +34,9 @@ function Tweet() {
 
       <div className={styles.countTweet}>
         <span>0/280</span>
-        <button className={styles.buttonTweet}>Tweet</button>
+        <button className={styles.buttonTweet} onClick={() => postTweetClick()}>
+          Tweet
+        </button>
       </div>
     </div>
   );
