@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   value: [],
+  removedIds: [],
 };
 
 export const lastTweetsSlice = createSlice({
@@ -12,9 +13,10 @@ export const lastTweetsSlice = createSlice({
       state.value.push(action.payload.content);
     },
     removeTweets: (state, action) => {
-      state.value = state.value.filter(
-        (tweet) => tweet.id !== action.payload.id,
-      );
+      const tweetId = String(action.payload);
+      if (!state.removedIds.includes(tweetId)) {
+        state.removedIds.push(tweetId);
+      }
     },
   },
 });
