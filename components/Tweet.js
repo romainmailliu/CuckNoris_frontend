@@ -1,23 +1,41 @@
 import styles from "../styles/Tweet.module.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addTweets } from "../reducers/lastTweets";
+import { useState } from "react";
 
-function Tweet(props) {
+function Tweet() {
+  const [tweetInput, setTweetInput] = useState("");
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.value);
-  console.log(user);
 
   const postTweetClick = () => {
     if (!user.token) {
       return;
     }
 
-    fetch(`http://localhost:3000/users/canTweet/${user.token}`)
+    fetch("http://localhost:3000/tweets", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        content: tweetInput,
+        token: user.token,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
-        if (data.result && data.canTweet) {
-          dispatch(addTweets(props));
+        if (data.result && data.tweet) {
+          dispatch(
+            addTweets({
+              content: data.tweet.content,
+            }),
+          );
+          setTweetInput("");
         }
+      })
+      .catch((error) => {
+        console.error("Erreur lors de la création du tweet :", error);
       });
   };
 
@@ -28,7 +46,9 @@ function Tweet(props) {
         <input
           type="text"
           placeholder="What's up?"
+          onChange={(e) => setTweetInput(e.target.value)}
           className={styles.whatsUp}
+          value={tweetInput}
         />
       </div>
 

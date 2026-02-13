@@ -1,5 +1,6 @@
 import styles from "../styles/LastTweets.module.css";
 import { useEffect, useState } from "react";
+import Feed from "./Feed";
 
 function LastTweet() {
   const [tweetsData, setTweetsData] = useState([]);
@@ -11,17 +12,10 @@ function LastTweet() {
         console.log(data);
         setTweetsData(data.tweets);
       });
-  }, []);
+  }, [tweetsData]);
 
   const tweets = tweetsData.map((data, i) => {
-    return (
-      <Tweet
-        key={i}
-        content={data.content}
-        firtname={data.author.firstname}
-        date={data.createdAt}
-      />
-    );
+    return <Feed key={i} {...data} />;
   });
 
   return (

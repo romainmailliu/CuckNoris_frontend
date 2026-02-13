@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import LastTweet from "../components/LastTweets";
 
 const initialState = {
   value: [],
@@ -10,11 +9,11 @@ export const lastTweetsSlice = createSlice({
   initialState,
   reducers: {
     addTweets: (state, action) => {
-      state.value.push(action.payload);
+      state.value.push(action.payload.content);
     },
     removeTweets: (state, action) => {
       state.value = state.value.filter(
-        (lastTweet) => LastTweet.content !== action.payload.content,
+        (tweet) => tweet.id !== action.payload.id,
       );
     },
   },

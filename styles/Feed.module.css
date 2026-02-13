@@ -1,0 +1,49 @@
+.feed {
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(199, 64, 188, 0.123);
+  padding: 10px;
+  border-radius: 10px;
+  gap: 5px;
+}
+
+.partieHaute {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.userLogo {
+  width: 60px;
+  height: 60px;
+  background: url(../public/favicon.ico);
+  background-position: center;
+  background-size: contain;
+  border-radius: 50%;
+  border: 2px solid #ccc;
+}
+
+.username {
+  color: whitesmoke;
+}
+
+.content {
+  margin-left: 10px;
+  margin-top: 5px;
+}
+
+.partiBasse {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.hashtag {
+  color: rgb(54, 144, 237);
+}
+
+.icons {
+  margin-left: 10px;
+  margin-top: 5px;
+}

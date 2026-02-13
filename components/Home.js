@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarlybirds } from "@fortawesome/free-brands-svg-icons";
 import Tweet from "./Tweet";
 import Trends from "./Trends";
+import LastTweet from "./LastTweets";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, login } from "../reducers/users";
 import { useRouter } from "next/router";
@@ -37,7 +38,9 @@ function Home() {
         <div className={styles.tweetPostContainer}>
           <Tweet />
         </div>
-        <div className={styles.feedContainer}></div>
+        <div className={styles.feedContainer}>
+          <LastTweet />
+        </div>
       </div>
       <div className={styles.trends}>
         <Trends />

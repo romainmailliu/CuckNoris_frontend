@@ -2,6 +2,7 @@
   height: 100vh;
   background: rgb(20, 29, 39);
   display: flex;
+  overflow: hidden;
 }
 
 .header {
