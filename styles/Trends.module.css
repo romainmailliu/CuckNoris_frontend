@@ -3,6 +3,7 @@
   flex-direction: column;
   margin: 10px;
 }
+
 .container h1 {
   color: aliceblue;
   margin-left: 20px;
@@ -14,17 +15,35 @@
   flex-direction: column;
   color: white;
   background-color: rgba(199, 64, 188, 0.123);
-  padding: 10px;
-  border-radius: 10px;
-  gap: 5px;
+  padding: 15px;
+  border-radius: 12px;
+  gap: 10px;
 }
 
+/* Carte hashtag */
 .partieHaute {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 5px;
+  padding: 12px 15px;
+  background-color: rgba(199, 64, 188, 0.2);
+  border-radius: 12px;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
+/* Nom du hashtag */
 .username {
+  font-size: 18px;
+  font-weight: 600;
   color: whitesmoke;
+}
+
+/* Badge compteur */
+.count {
+  background-color: rgba(255, 255, 255, 0.15);
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 500;
 }

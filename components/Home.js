@@ -39,7 +39,9 @@ function Home() {
   }, []);
 
   // Faire un map pour les faire apparaitre
-  const allHashtags = hashtags.map((name, i) => <Trends key={i} name={name} />);
+  const allHashtags = hashtags.map((hashtag, i) => (
+    <Trends key={i} name={hashtag.name} count={hashtag.count} />
+  ));
 
   return (
     <div className={styles.main}>

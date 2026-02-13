@@ -4,7 +4,8 @@ function Trend(props) {
   return (
     <div className={styles.feed}>
       <div className={styles.partieHaute}>
-        <span className={styles.usertname}>#{props.name}</span>
+        <span className={styles.username}>#{props.name}</span>
+        <span className={styles.count}>{props.count} posts</span>
       </div>
     </div>
   );
