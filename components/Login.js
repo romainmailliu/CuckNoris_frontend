@@ -3,11 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEarlybirds } from "@fortawesome/free-brands-svg-icons";
 
 function Login() {
-<<<<<<< HEAD
-  // const [isModalVisible, setIsModalVisible] = useState(false);
-=======
   //const [isModalVisible, setIsModalVisible] = useState(false);
->>>>>>> b2bd625751103b55677ca1a4d163230495a48131
 
   return (
     <div className={styles.container}>

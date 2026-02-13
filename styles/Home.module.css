@@ -1,22 +1,63 @@
 .main {
+  height: 100vh;
+  background: rgb(20, 29, 39);
+  display: flex;
+}
+
+.header {
+  width: 20vw;
+  border-right: 1px solid rgba(255, 255, 255, 0.479);
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 4rem 0;
+  justify-content: space-between;
 }
 
-.title {
-  line-height: 1.15;
-  font-size: 4rem;
+.icon {
+  color: white;
+  font-size: 50px;
+  margin: 20px 30px;
 }
 
-.title a {
-  color: #0070f3;
-  text-decoration: none;
+.userLogout {
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  gap: 10px;
+}
+.logout {
+  border-radius: 10px;
+  width: 30%;
+  background: none;
+  color: whitesmoke;
+  padding: 10px 15px;
+  font-size: larger;
+  border: 1px solid rgba(245, 245, 245, 0.39);
+  cursor: pointer;
 }
 
-.title a:hover, .title a:focus, .title a:active {
-  text-decoration: underline;
+.logout:hover {
+  background: whitesmoke;
+  color: rgb(54, 144, 237);
+  font-size: larger;
+  border-radius: 10px;
+  border: 2px solid rgb(54, 144, 237);
+  cursor: pointer;
+}
+
+.userLogout h2 {
+  color: white;
+}
+
+.home {
+  width: 50vw;
+}
+
+.trends {
+  width: 30vw;
+  border-left: 1px solid rgba(255, 255, 255, 0.479);
+}
+
+.tweetPostContainer {
+  height: 20vh;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.479);
 }

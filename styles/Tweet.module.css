@@ -1,0 +1,48 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+}
+.container h1 {
+  color: aliceblue;
+  margin-left: 20px;
+}
+
+.inputWhats {
+  display: flex;
+  justify-content: center;
+  height: 5vh;
+}
+.whatsUp {
+  width: 80%;
+  background: none;
+  font-size: larger;
+  border: 1px solid whitesmoke;
+  border-radius: 10px;
+  color: whitesmoke;
+}
+.whatsUp:hover {
+  border: 2px solid rgb(54, 144, 237);
+  border-radius: 10px;
+}
+
+.countTweet {
+  display: flex;
+  justify-content: flex-end;
+  width: 90%;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+  color: white;
+}
+
+.buttonTweet {
+  border-radius: 10px;
+  padding: 5px 15px;
+  font-size: larger;
+  background: rgb(54, 144, 237);
+  border-radius: 10px;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
