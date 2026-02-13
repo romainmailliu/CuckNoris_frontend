@@ -32,6 +32,7 @@ function Tweet() {
             }),
           );
           setTweetInput("");
+          window.location.reload();
         }
       })
       .catch((error) => {

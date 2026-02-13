@@ -7,10 +7,12 @@ import LastTweet from "./LastTweets";
 import { useDispatch, useSelector } from "react-redux";
 import { logout, login } from "../reducers/users";
 import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
 
 function Home() {
   const dispatch = useDispatch();
   const router = useRouter();
+  const [hashtags, setHashtags] = useState([]);
 
   // Va chercher le username dans le Reducer
   const username = useSelector((state) => state.user.value.username);
@@ -22,6 +24,23 @@ function Home() {
   };
 
   console.log("username=>", username);
+
+  // Récupérer la data des tweets dans la base de donnée
+
+  useEffect(() => {
+    const fetchHashtags = async () => {
+      const response = await fetch("http://localhost:3000/hashtag");
+      const data = await response.json();
+
+      setHashtags(data.result);
+    };
+
+    fetchHashtags();
+  }, []);
+
+  // Faire un map pour les faire apparaitre
+  const allHashtags = hashtags.map((name, i) => <Trends key={i} name={name} />);
+
   return (
     <div className={styles.main}>
       <div className={styles.header}>
@@ -43,7 +62,10 @@ function Home() {
         </div>
       </div>
       <div className={styles.trends}>
-        <Trends />
+        <div className={styles.container}>
+          <h1>Trends</h1>
+          {allHashtags}
+        </div>
       </div>
     </div>
   );

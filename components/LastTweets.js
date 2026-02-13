@@ -12,7 +12,7 @@ function LastTweet() {
         console.log(data);
         setTweetsData(data.tweets);
       });
-  }, [tweetsData]);
+  }, []);
 
   const tweets = tweetsData.map((data, i) => {
     return <Feed key={i} {...data} />;
